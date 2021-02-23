@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Instagram |by Qasim</title>
+  <style type="text/css" media="all">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .form {
+      width: 90%;
+      text-align: center;
+      height: 100vh;
+      padding: 10px 0;
+      position: relative;
+    }
+    .form select {
+      border: none;
+      background: none;
+      color: #adadad;
+    }
+    .form h1 {
+      padding-top: 70px;
+      padding-bottom: 20px;
+      font-family: Times New Roman;
+      font-style: italic;
+    }
+    .form  .input {
+      border: none;
+      width: 90%;
+      height: 48px;
+      background: #f8f9f9;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      margin: 10px auto;
+      display: flex;
+    }
+    .form .input input {
+      border: none;
+      width: 85%;
+      height: 100%;
+      background: none;
+      padding: 0 15px;
+    }
+    .form .input #eye {
+      font-size: 20px;
+      height: 100%;
+      width: 15%;
+      color: #adadad;
+      line-height: 44px;
+      text-align: center;
+    }
+    .form button {
+      width: 90%;
+      height: 45px;
+      border: none;
+      margin: 5px auto;
+      background: #b9def9;
+      color: #eee;
+      border-radius: 3px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .form p {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 12px;
+      font-family: Sans-Serif;
+    }
+    .form p a {
+      font-size: 13px;
+      font-weight: bold;
+      color: #425b72;
+    }
+    .form .line {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-family: Sans-Serif;
+      color: #cdd0d1;
+    }
+    .form .line:before {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+      top: 42%;
+      right: 5%;
+    }
+    .form .line:after {
+      position: absolute;
+      content: '';
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+      left: 5%;
+      top: 42%;
+    }
+    .form h3 {
+      font-family: Sans-Serif;
+      font-size: 16px;
+      padding: 10px 0;
+    }
+    .form h3 a {
+      color: #1876f3;
+    }
+    .form h3 a i {
+      width: 28px;
+      height: 28px;
+      background: #1876f3;
+      color: #fff;
+      border-radius: 50%;
+      line-height: 30px;
+      font-size: 20px;
+    }
+    .form .box {
+      margin-top: 30px;
+      width: 100%;
+      padding: 5px 0;
+      border-top: 1px solid #ddd;
+    }
+    .load {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .load i {
+      font-size: 70px;
+      background: linear-gradient(60deg,#744eef,red,#ee234d);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .load .txt {
+      position: absolute;
+      content: '';
+      bottom: 10%;
+      text-align: center;
+      color: #adadad;
+    }
+    .load .txt h3 {
+      font-weight: 400;
+      padding: 5px 0;
+      background: linear-gradient(60deg,#744eef,red,#ee234d);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <form class="form" name="form" action="" method="POST" onsubmit="return valid()">
+    <select>
+      <option>English</option>
+      <option>Persian</option>#c400ff
+      <option>Dari</option>
+      <option>Bahasa Indonesia</option>
+      <option>Indian</option>
+      <option>Turkye</option>
+    </select>
+    <h1>Instagram</h1>
+    <div class="input" id="user">
+      <input type="text" id="email" onkeyup="check()" name="text" placeholder="Phone number, email or username" />
+    </div>
+    <div class="input" id="pasw">
+      <input type="password" id="pass" onkeyup="check()" name="password" placeholder="Password" /><i class="fa fa-eye-slash" id="eye"></i>
+    </div>
+    <button type="submit" id="btn">Log In</button>
+    <p>
+      Forgot your login details? <a href="#">Get help signing in.</a>
+    </p>
+    <div class="line">
+      <h4>OR</h4>
+    </div>
+    <h3><a href="#"><i class="fa fa-facebook"></i> Continue as facebook</a></h3>
+    <div class="box">
+      <p>
+        Don't have an account? <a href="#">Sign up.</a>
+      </p>
+    </div>
+  </form>
+  <div class="load">
+    <i class="fa fa-instagram"></i>
+    <div class="txt">
+      <p>
+        from
+      </p>
+      <h3>FACEBOOK</h3>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(window).on('load', function() {
+      $(".load").delay(1500).fadeOut('slow');
+      $("body").delay(1500).css({
+        'overflow': 'visible'
+      })
+    })
+
+    function check() {
+      var btn = document.getElementById('btn');
+      var email = document.getElementById('email').value;
+      var pas = document.getElementById('pass').value;
+      if (email.length >= 1 || pas.length >= 1) {
+        btn.style.background = "#1876f3";
+      } else {
+        btn.style.background = "#b9def9";
+      }
+    }
+
+    // password showing
+    var eye = document.getElementById('eye');
+    var pass = document.getElementById('pass');
+    eye.addEventListener('click', () => {
+      if (pass.type == "password") {
+        pass.type = "text";
+        eye.classList.add("fa-eye");
+        eye.classList.remove("fa-eye-slash");
+        eye.style.color = "#39f";
+      } else {
+        pass.type = "password";
+        eye.classList.remove("fa-eye");
+        eye.classList.add("fa-eye-slash")
+        eye.style.color = "#adadad"
+      }
+    })
+    // valdation
+    function valid() {
+      var text = document.forms["form"]["text"].value;
+      var password = document.forms["form"]["password"].value;
+      if (text == "" || password == "") {
+        alert("Look's bad!");
+        document.getElementById('user').style.borderColor = "red";
+        document.getElementById('pasw').style.borderColor = "red";
+        return false;
+      } else {
+        alert("welcome");
+        document.getElementById('user').style.borderColor = "#ddd";
+        document.getElementById('pasw').style.borderColor = "#ddd";
+        return true;
+      }
+    }
+  </script>
+</body>
+</html>
